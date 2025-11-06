@@ -47,6 +47,21 @@ const dnsRecords = [
 ];
 
 
-function ee(er){
-    order = [];
+function search(records, address){
+    let low = 0;
+    let high = records.length - 1;
+    while (low <= high) {
+        let middle = Math.floor((low+high)/2);
+        let guess = records[middle].address;
+        if (guess === address){
+            return records[middle];
+        }
+        if (guess < address){
+            low = middle + 1;
+        }else{
+            high = middle - 1;
+        }
+    }
 }
+
+console.log(search(dnsRecords,"google.com"));
