@@ -6,10 +6,10 @@ let playlist = [{
     },{
         name: "Never Gonna Give You Up", 
         artist:["Rick Astley"],
-        genres: [""],
-        spotify: ""
+        genres: ["Pop"],
+        spotify: "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
     },{
-        name: "", 
+        name: "All I Want For Christmas", 
         artist:[""],
         genres: [""],
         spotify: ""
