@@ -39,12 +39,22 @@ function add(list){
 
 function fltr(ask){
     for (i in playlist){
-        if(i.name.lowercase() == ask.lowercase()){
-            
-        } else{
-
+        if(i.name.lowercase() === ask.lowercase()){
+            card.style.display = "block";
+        }if(i.genre.lowercase() === ask.lowercase()){
+            card.style.display = "block";
+        }if(i.artists.lowercase() === ask.lowercase()){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
         }
     }
 }
 
 
+function mode() {
+    const container = document.querySelector(".toggle");
+    container.insertAdjacentElement("afterbegin",`
+        <button class = "mode">Light Mode</button>
+    `)
+}
