@@ -1,2 +1,6 @@
 
-.vite/
+playlist
+.vite
+
+package.json
+package-lock.json

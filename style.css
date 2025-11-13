@@ -1,11 +1,12 @@
 :root {
-    --dark-bg: 
-    --dark-btn: 
-    --dark-fnt: 
-    --dark-scd: 
+    --dark-bg: #0B2545;
+    --dark-fnt: #FFFFFA;
+    --dark-scd:  #13315C;
 
-    --light-bg:  
-    --light-btn: 
-    --light-fnt: 
-    --light-scd: 
+    --light-bg: #FFFFFF;
+    --light-fnt: #37323E;
+    --light-scd: #6D6A75;
+
+    --btn: #DEB841;
 }
+
