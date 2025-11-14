@@ -37,8 +37,10 @@ function add(list){
     }
 }
 
+const card = document.querySelectorAll(".card");
+
 function fltr(ask){
-    for (i in playlist){
+    for (i in card){
         if(i.name.lowercase() === ask.lowercase()){
             card.style.display = "block";
         }if(i.genre.lowercase() === ask.lowercase()){
@@ -51,10 +53,14 @@ function fltr(ask){
     }
 }
 
+////////////////////////////////////////////////////
+
+const m = document.querySelector(".toggle");
+const body = document.querySelector("body");
 
 function mode() {
-    const container = document.querySelector(".toggle");
-    container.insertAdjacentElement("afterbegin",`
+    m.insertAdjacentElement("afterbegin",`
         <button class = "mode">Light Mode</button>
     `)
+    
 }

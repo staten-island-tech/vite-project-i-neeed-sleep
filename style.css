@@ -8,9 +8,20 @@
     --light-scd: #6D6A75;
 
     --btn: #DEB841;
+    --btn-fnt: #0D1821;
 }
 
-.mode {
+.mode, .msc {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--btn);
+    color: var(--btn-fnt);
+}
 
+.art {
+    align-items: center;
+}
+
+.songs {
+    display: flex;
+    justify-content: center;
 }
