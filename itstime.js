@@ -31,10 +31,8 @@ function show(song){
     `)
 }
 
-function add(list){
-    for (i in playlist){
-        show(i);
-    }
+for (i in playlist){
+    show(i);
 }
 
 const card = document.querySelectorAll(".card");
@@ -52,6 +50,11 @@ function fltr(ask){
         }
     }
 }
+
+document.getElementById('searchbar').addEventListener('input', ask =>{
+    fltr(ask);
+})
+
 
 ////////////////////////////////////////////////////
 
