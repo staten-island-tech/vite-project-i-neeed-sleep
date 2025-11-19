@@ -61,9 +61,20 @@ document.getElementById('searchbar').addEventListener('input', ask =>{
 const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
 
-function mode() {
-    m.insertAdjacentElement("afterbegin",`
-        <button class = "mode">Light Mode</button>
+m.innerHTML("afterbegin",`
+    <button class = "mode" opcurrent = "dark">Light Mode</button>
+`)
+
+function mode (mode){
+    m.innerHTML("afterbegin",`
+    <button class = "mode">${mode} Mode</button>
     `)
-    
+    card.style.backgroundColor = `var(--${mode}-bg)`;
+    document.querySelector("p","h3","h2","h1").style.color = `var(--${mode}-fnt)`;
+    document.querySelector("body").style.color = `var(--${mode}-scd)`;
 }
+
+document.querySelector('.mode').addEventListener('click', change =>{
+    oppCurrent = document.querySelector('.mode').
+
+})
