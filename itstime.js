@@ -22,8 +22,8 @@ function show(song){
     const container = document.querySelector(".songs");
     container.insertAdjacentHTML("afterbegin", `
         <div class="card">
-            <h2>${song.name} by ${song.artists}</h2>
-            <p>Genres: ${song.genres}</p>
+            <h2 id = "name">${song.name}</h2> <h2 id ="artist">${song.artists}</h2>
+            <p id ="genre">Genres: ${song.genres}</p>
             <a href = "${song.spotify}">
                 <button class="msc"> Listen on Spotify </button>
             </a>
@@ -39,11 +39,11 @@ const card = document.querySelectorAll(".card");
 
 function fltr(ask){
     for (i in card){
-        if(i.name.lowercase() === ask.lowercase()){
+        if(i.getElementById("name").lowercase() === ask){
             card.style.display = "block";
-        }if(i.genre.lowercase() === ask.lowercase()){
+        }if(i.getElementById("genre").replace(/genres:|\[|\]/gi,"").lowercase().includes(ask)){
             card.style.display = "block";
-        }if(i.artists.lowercase() === ask.lowercase()){
+        }if(i.getElementById("artist").lowercase() === ask){
             card.style.display = "block";
         }else{
             card.style.display = "none";
@@ -51,8 +51,10 @@ function fltr(ask){
     }
 }
 
-document.getElementById('searchbar').addEventListener('input', ask =>{
-    fltr(ask);
+document.getElementById('searchbar').addEventListener('submit', ask =>{
+    ask.preventDefault;
+    input = document.getElementById('searchbar').value.lowercase();
+    fltr(input);
 })
 
 
@@ -66,8 +68,13 @@ m.innerHTML("afterbegin",`
 `)
 
 function mode (mode){
+    if (mode==="light"){
+        opcurrent = dark;
+    } else{
+        opcurrent = light;
+    }
     m.innerHTML("afterbegin",`
-    <button class = "mode">${mode} Mode</button>
+    <button class = "mode" opcurrent="${opcurrent}">${mode} Mode</button>
     `)
     card.style.backgroundColor = `var(--${mode}-bg)`;
     document.querySelector("p","h3","h2","h1").style.color = `var(--${mode}-fnt)`;
@@ -75,6 +82,5 @@ function mode (mode){
 }
 
 document.querySelector('.mode').addEventListener('click', change =>{
-    oppCurrent = document.querySelector('.mode').
-
+    oppCurrent = document.querySelector('.mode').getAttribute("opcurrent")
 })
