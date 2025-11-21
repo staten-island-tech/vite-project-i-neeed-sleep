@@ -23,7 +23,7 @@ p, h1, h2, h3 {
 }
 
 .mode, .msc {
-    font-family: "Andika", sans-serif;
+    font-family: fantasy;
     background-color: var(--btn);
     color: var(--btn-fnt);
 }
@@ -41,13 +41,15 @@ p, h1, h2, h3 {
 }
 
 .card {
-    font-family: "Andika", sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
-    height: 40px;
+    height: 170px;
     margin: 25px 0;
-    text-align: left;
     box-shadow: 10px 10px var(--btn);
-
     background-color: var(--light-bg);
 }
 
+id.searchbar{
+  font-size: 20px;
+  font-family: sans-serif;
+}

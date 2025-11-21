@@ -22,7 +22,8 @@ function show(song){
     const container = document.querySelector(".songs");
     container.insertAdjacentHTML("afterbegin", `
         <div class="card">
-            <h2 id = "name">${song.name}</h2> <h2 id ="artist">${song.artists}</h2>
+            <h2 id = "name">${song.name}</h2> 
+            <h3 id ="artist">${song.artists}</h3>
             <p id ="genre">Genres: ${song.genres}</p>
             <a href = "${song.spotify}">
                 <button class="msc"> Listen on Spotify </button>
@@ -31,9 +32,9 @@ function show(song){
     `)
 }
 
-for (i in playlist){
-    show(i);
-}
+playlist.forEach(song => {
+    show(song);
+})
 
 const card = document.querySelectorAll(".card");
 
@@ -58,7 +59,7 @@ document.getElementById('searchbar').addEventListener('submit', ask =>{
 })
 
 
-////////////////////////////////////////////////////
+////////////////////////////////////////////////////    LIGHT/DARK MODES
 
 const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
@@ -74,7 +75,7 @@ function mode (mode){
         opcurrent = light;
     }
     m.innerHTML("afterbegin",`
-    <button class = "mode" opcurrent="${opcurrent}">${mode} Mode</button>
+    <button class = "mode" opcurrent="${opcurrent}">${mode.capitalize()} Mode</button>
     `)
     card.style.backgroundColor = `var(--${mode}-bg)`;
     document.querySelector("p","h3","h2","h1").style.color = `var(--${mode}-fnt)`;
@@ -83,4 +84,9 @@ function mode (mode){
 
 document.querySelector('.mode').addEventListener('click', change =>{
     oppCurrent = document.querySelector('.mode').getAttribute("opcurrent")
+    mode(oppCurrent);
 })
+
+
+//////////////////////////////////////////////////////////// ALBUM ART
+
