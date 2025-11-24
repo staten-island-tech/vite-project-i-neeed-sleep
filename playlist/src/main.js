@@ -13,7 +13,7 @@ let playlist = [{
     },{
         name: "All I Want For Christmas Is You", 
         artists:["Mariah Carey"],
-        genres: ["Christmas", "Holiday", "Pop"],
+        genres: ["Christmas", "Pop"],
         spotify: "https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn"
 }]
 
@@ -52,9 +52,9 @@ function fltr(ask){
     }
 }
 
-document.getElementById('searchbar').addEventListener('submit', ask =>{
+document.querySelector('.searchbar').addEventListener('submit', ask =>{
     ask.preventDefault;
-    input = document.getElementById('searchbar').value.lowercase();
+    input = document.querySelector('.searchbar').value.lowercase();
     fltr(input);
 })
 
@@ -64,7 +64,7 @@ document.getElementById('searchbar').addEventListener('submit', ask =>{
 const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
 
-m.innerHTML("afterbegin",`
+m.insertAdjacentHTML("afterbegin",`
     <button class = "mode" opcurrent = "dark">Light Mode</button>
 `)
 
@@ -77,13 +77,13 @@ function mode (mode){
     m.innerHTML("afterbegin",`
     <button class = "mode" opcurrent="${opcurrent}">${mode.capitalize()} Mode</button>
     `)
-    card.style.backgroundColor = `var(--${mode}-bg)`;
-    document.querySelector("p","h3","h2","h1").style.color = `var(--${mode}-fnt)`;
-    document.querySelector("body").style.color = `var(--${mode}-scd)`;
+    document.documentElement.style.setProperty('--primary',`--${opcurrent}-bg`);
+    document.documentElement.style.setProperty('--scd',`--${opcurrent}-scd`);
+    document.documentElement.style.setProperty('--fnt',`--${opcurrent}-fnt`);
 }
 
 document.querySelector('.mode').addEventListener('click', change =>{
-    oppCurrent = document.querySelector('.mode').getAttribute("opcurrent")
+    oppCurrent = change.querySelector('.mode').getAttribute("opcurrent")
     mode(oppCurrent);
 })
 

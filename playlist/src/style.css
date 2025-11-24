@@ -7,32 +7,49 @@ html
     --dark-scd:  #13315C;
 
     --light-bg: #FFFFFF;
-    --light-fnt: #37323E;
-    --light-scd: #6D6A75;
+    --light-fnt: #26212c;
+    --light-scd: #7180AC;
+
+    --primary: var(--light-bg);
+    --scd: var(--light-scd);
+    --fnt: var(--light-fnt);
 
     --btn: #DEB841;
     --btn-fnt: #0D1821;
 }
 
 body {
-    background-color: var(--light-scd);
+    background-color: var(--scd);
 }
 
 p, h1, h2, h3 {
-    color: var(--light-fnt);
+    color: var(--fnt);
+}
+
+h1 {
+    font-size: 40px;
 }
 
 .mode, .msc {
     font-family: fantasy;
     background-color: var(--btn);
     color: var(--btn-fnt);
+    transition: 0.3s;
+}
+.mode{
+    font-size: 25px;
+}
+
+.mode:hover, .msc:hover {
+    color: var(--btn);
+    background-color: var(--btn-fnt);
 }
 
 .art {
     align-items: center;
     justify-content: center;
     height: 80px;
-    width: 80px;
+    width: 80px;    
 }
 
 .songs {
@@ -42,14 +59,23 @@ p, h1, h2, h3 {
 
 .card {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    height: 170px;
+    max-width: 100%;
+    max-height: 160px;
     margin: 25px 0;
     box-shadow: 10px 10px var(--btn);
-    background-color: var(--light-bg);
+    background-color: var(--primary);
+    transition: 0.3s;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    padding-top: 10px;
 }
 
-id.searchbar{
+.card:hover {
+    transform: scale(1.05);
+}
+
+.searchbar{
   font-size: 20px;
   font-family: sans-serif;
+  width: 450px;
 }
