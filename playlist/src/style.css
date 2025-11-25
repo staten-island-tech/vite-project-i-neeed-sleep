@@ -15,7 +15,7 @@ html
     --fnt: var(--light-fnt);
 
     --btn: #DEB841;
-    --btn-fnt: #0D1821;
+    --btn-scd: #0D1821;
 }
 
 body {
@@ -33,7 +33,7 @@ h1 {
 .mode, .msc {
     font-family: fantasy;
     background-color: var(--btn);
-    color: var(--btn-fnt);
+    color: var(--btn-scd);
     transition: 0.3s;
 }
 .mode{
@@ -41,8 +41,8 @@ h1 {
 }
 
 .mode:hover, .msc:hover {
+    background-color: var(--btn-scd);
     color: var(--btn);
-    background-color: var(--btn-fnt);
 }
 
 .art {
@@ -75,7 +75,11 @@ h1 {
 }
 
 .searchbar{
-  font-size: 20px;
+  font-size: 30px;
   font-family: sans-serif;
   width: 450px;
+}
+
+.top {
+    display: flex;
 }

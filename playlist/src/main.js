@@ -64,26 +64,29 @@ document.querySelector('.searchbar').addEventListener('submit', ask =>{
 const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
 
-m.insertAdjacentHTML("afterbegin",`
-    <button class = "mode" opcurrent = "dark">Light Mode</button>
-`)
 
 function mode (mode){
     if (mode==="light"){
         opcurrent = dark;
+        m.innerHTML("afterbegin",
+            `<button class = "mode" opcurrent="${opcurrent}">
+                ◑
+            </button>`)
     } else{
         opcurrent = light;
+        m.innerHTML("afterbegin",
+            `<button class = "mode" opcurrent="${opcurrent}">
+                ◑
+            </button>`)
     }
-    m.innerHTML("afterbegin",`
-    <button class = "mode" opcurrent="${opcurrent}">${mode.capitalize()} Mode</button>
-    `)
+    
     document.documentElement.style.setProperty('--primary',`--${opcurrent}-bg`);
     document.documentElement.style.setProperty('--scd',`--${opcurrent}-scd`);
     document.documentElement.style.setProperty('--fnt',`--${opcurrent}-fnt`);
 }
 
 document.querySelector('.mode').addEventListener('click', change =>{
-    oppCurrent = change.querySelector('.mode').getAttribute("opcurrent")
+    oppCurrent = document.querySelector('.mode').getAttribute("opcurrent");
     mode(oppCurrent);
 })
 
