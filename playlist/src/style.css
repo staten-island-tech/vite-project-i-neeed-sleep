@@ -74,7 +74,7 @@ h1 {
     transform: scale(1.05);
 }
 
-.searchbar{
+#input{
   font-size: 30px;
   font-family: sans-serif;
   width: 450px;

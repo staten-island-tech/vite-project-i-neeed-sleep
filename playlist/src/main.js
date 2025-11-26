@@ -42,7 +42,7 @@ function fltr(ask){
     for (i in card){
         if(i.getElementById("name").lowercase() === ask){
             card.style.display = "block";
-        }if(i.getElementById("genre").replace(/genres:|\[|\]/gi,"").lowercase().includes(ask)){
+        }if(i.getElementById("genre").lowercase().includes(ask)){
             card.style.display = "block";
         }if(i.getElementById("artist").lowercase() === ask){
             card.style.display = "block";
@@ -52,9 +52,9 @@ function fltr(ask){
     }
 }
 
-document.querySelector('.searchbar').addEventListener('submit', ask =>{
-    ask.preventDefault;
-    input = document.querySelector('.searchbar').value.lowercase();
+document.querySelector('#search').addEventListener('submit', ask =>{
+    ask.preventDefault();
+    input = document.querySelector('#input').value.lowercase();
     fltr(input);
 })
 
@@ -65,28 +65,24 @@ const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
 
 
-function mode (mode){
-    if (mode==="light"){
-        opcurrent = dark;
+function mode (opmode){
+    if (opmode==="light"){
+        let current = dark;
         m.innerHTML("afterbegin",
-            `<button class = "mode" opcurrent="${opcurrent}">
+            `<button class = "mode" opcurrent="${current}">
                 ◑
             </button>`)
     } else{
-        opcurrent = light;
+        let current = light;
         m.innerHTML("afterbegin",
-            `<button class = "mode" opcurrent="${opcurrent}">
+            `<button class = "mode" opcurrent="${current}">
                 ◑
             </button>`)
     }
-    
-    document.documentElement.style.setProperty('--primary',`--${opcurrent}-bg`);
-    document.documentElement.style.setProperty('--scd',`--${opcurrent}-scd`);
-    document.documentElement.style.setProperty('--fnt',`--${opcurrent}-fnt`);
 }
 
 document.querySelector('.mode').addEventListener('click', change =>{
-    oppCurrent = document.querySelector('.mode').getAttribute("opcurrent");
+    let oppCurrent = document.querySelector('.mode').getAttribute("opcurrent");
     mode(oppCurrent);
 })
 
