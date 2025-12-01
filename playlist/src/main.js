@@ -21,10 +21,10 @@ let playlist = [{
 function show(song){
     const container = document.querySelector(".songs");
     container.insertAdjacentHTML("afterbegin", `
-        <div class="card">
-            <h2 id = "name">${song.name}</h2> 
-            <h3 id ="artist">${song.artists}</h3>
-            <p id ="genre">Genres: ${song.genres}</p>
+        <div class="card" name = "${song.name}" artist ="${song.artists}" genre ="${song.genres}">
+            <h2>${song.name}</h2> 
+            <h3>${song.artists}</h3>
+            <p>Genres: ${song.genres}</p>
             <a href = "${song.spotify}">
                 <button class="msc"> Listen on Spotify </button>
             </a>
@@ -36,25 +36,26 @@ playlist.forEach(song => {
     show(song);
 })
 
-const card = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
 
 function fltr(ask){
-    for (i in card){
-        if(i.getElementById("name").lowercase() === ask){
+    cards.forEach(card => {
+        if(card.getAttribute("name").toLowerCase().includes(ask)){
             card.style.display = "block";
-        }if(i.getElementById("genre").lowercase().includes(ask)){
+        }if(card.getAttribute("genre").toLowerCase().includes(ask)){
             card.style.display = "block";
-        }if(i.getElementById("artist").lowercase() === ask){
+        }if(card.getAttribute("artist").toLowerCase().includes(ask)){
             card.style.display = "block";
         }else{
             card.style.display = "none";
         }
-    }
+    })
 }
+
 
 document.querySelector('#search').addEventListener('submit', ask =>{
     ask.preventDefault();
-    input = document.querySelector('#input').value.lowercase();
+    let input = document.querySelector('#input').value.toLowerCase();
     fltr(input);
 })
 
@@ -65,25 +66,16 @@ const m = document.querySelector(".toggle");
 const body = document.querySelector("body");
 
 
-function mode (opmode){
-    if (opmode==="light"){
-        let current = dark;
-        m.innerHTML("afterbegin",
-            `<button class = "mode" opcurrent="${current}">
-                ◑
-            </button>`)
-    } else{
-        let current = light;
-        m.innerHTML("afterbegin",
-            `<button class = "mode" opcurrent="${current}">
-                ◑
-            </button>`)
-    }
-}
-
 document.querySelector('.mode').addEventListener('click', change =>{
-    let oppCurrent = document.querySelector('.mode').getAttribute("opcurrent");
-    mode(oppCurrent);
+    if (document.body.classList.contains("light")){
+        document.body.classList.remove("light");
+        document.body.classList.add("dark")
+    }
+    if (document.body.classList.contains("dark")){
+        document.body.classList.remove("dark");
+        document.body.classList.add("light")
+    }
+
 })
 
 
