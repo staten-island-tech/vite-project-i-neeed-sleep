@@ -1,6 +1,3 @@
-body, 
-html
-
 :root {
     --dark-bg: #0B2545;
     --dark-fnt: #FFFFFA;
@@ -10,13 +7,16 @@ html
     --light-fnt: #26212c;
     --light-scd: #7180AC;
 
+    --btn: #DEB841;
+    --btn-scd: #0D1821;
+    
     --primary: var(--light-bg);
     --scd: var(--light-scd);
     --fnt: var(--light-fnt);
-
-    --btn: #DEB841;
-    --btn-scd: #0D1821;
 }
+
+body, 
+html
 
 body {
     background-color: var(--scd);
@@ -75,11 +75,12 @@ h1 {
 }
 
 #input{
-  font-size: 30px;
-  font-family: sans-serif;
-  width: 450px;
+    font-size: 30px;
+    font-family: sans-serif;
+    width: 650px;
 }
 
 .top {
     display: flex;
+    padding-left: 5%;
 }

@@ -40,11 +40,7 @@ const cards = document.querySelectorAll(".card");
 
 function fltr(ask){
     cards.forEach(card => {
-        if(card.getAttribute("name").toLowerCase().includes(ask)){
-            card.style.display = "block";
-        }if(card.getAttribute("genre").toLowerCase().includes(ask)){
-            card.style.display = "block";
-        }if(card.getAttribute("artist").toLowerCase().includes(ask)){
+        if(card.getAttribute("name").toLowerCase().includes(ask)||card.getAttribute("genre").toLowerCase().includes(ask)||card.getAttribute("artist").toLowerCase().includes(ask)){
             card.style.display = "block";
         }else{
             card.style.display = "none";
@@ -62,18 +58,11 @@ document.querySelector('#search').addEventListener('submit', ask =>{
 
 ////////////////////////////////////////////////////    LIGHT/DARK MODES
 
-const m = document.querySelector(".toggle");
-const body = document.querySelector("body");
-
-
 document.querySelector('.mode').addEventListener('click', change =>{
-    if (document.body.classList.contains("light")){
-        document.body.classList.remove("light");
-        document.body.classList.add("dark")
-    }
-    if (document.body.classList.contains("dark")){
-        document.body.classList.remove("dark");
-        document.body.classList.add("light")
+    if (getComputedStyle(document.querySelector(':root')).getPropertyValue('--primary') === 'var(--light-bg)'){
+        document.querySelector(':root').style.setProperty('--primary', 'var()');
+    }else {
+        eee
     }
 
 })
