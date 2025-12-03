@@ -59,10 +59,16 @@ document.querySelector('#search').addEventListener('submit', ask =>{
 ////////////////////////////////////////////////////    LIGHT/DARK MODES
 
 document.querySelector('.mode').addEventListener('click', change =>{
-    if (getComputedStyle(document.querySelector(':root')).getPropertyValue('--primary') === 'var(--light-bg)'){
-        document.querySelector(':root').style.setProperty('--primary', 'var()');
+    const root = document.querySelector(':root');
+    const gstyle = getComputedStyle(root);
+    if (gstyle.getPropertyValue('--primary') === gstyle.getPropertyValue('--light-bg')){
+        root.style.setProperty('--primary', gstyle.getPropertyValue('--dark-bg'));
+        root.style.setProperty('--scd', gstyle.getPropertyValue('--dark-scd'));
+        root.style.setProperty('--fnt', gstyle.getPropertyValue('--dark-fnt'));
     }else {
-        eee
+        root.style.setProperty('--primary', gstyle.getPropertyValue('--light-bg'));
+        root.style.setProperty('--scd', gstyle.getPropertyValue('--light-scd'));
+        root.style.setProperty('--fnt', gstyle.getPropertyValue('--light-fnt'));
     }
 
 })
@@ -70,3 +76,8 @@ document.querySelector('.mode').addEventListener('click', change =>{
 
 //////////////////////////////////////////////////////////// ALBUM ART
 
+
+
+/////////////////////////////////////////////////////////// ADD 
+
+const cons = document.querySelector

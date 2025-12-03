@@ -15,6 +15,19 @@
     --fnt: var(--light-fnt);
 }
 
+dark-mode {
+    --primary:var(--dark-bg);
+    --scd: var(--dark-scd);
+    --fnt: var(--dark-fnt);
+}
+
+light-mode {
+    --primary: var(--light-bg);
+    --scd: var(--light-scd);
+    --fnt: var(--light-fnt);
+}
+
+
 body, 
 html
 
