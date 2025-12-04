@@ -43,14 +43,18 @@ h1 {
     font-size: 40px;
 }
 
-.mode, .msc {
+.mode, .msc, .add {
     font-family: fantasy;
     background-color: var(--btn);
     color: var(--btn-scd);
     transition: 0.3s;
 }
-.mode{
+.mode, .add{
     font-size: 25px;
+    height: 40px;
+}
+.mode {
+    width: 40px;
 }
 
 .mode:hover, .msc:hover {
@@ -87,13 +91,23 @@ h1 {
     transform: scale(1.05);
 }
 
-#input{
+#new{
     font-size: 30px;
     font-family: sans-serif;
-    width: 650px;
+    width:640px;
+}
+
+#srch {
+    width: 600px;
+    font-size: 30px;
+    font-family: sans-serif;
 }
 
 .top {
     display: flex;
     padding-left: 5%;
+}
+.plus {
+    padding-left: 5%;
+    width: 600px;
 }

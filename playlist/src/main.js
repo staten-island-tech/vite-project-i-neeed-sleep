@@ -80,4 +80,27 @@ document.querySelector('.mode').addEventListener('click', change =>{
 
 /////////////////////////////////////////////////////////// ADD 
 
-const cons = document.querySelector
+function ADD(){
+    const data = document.querySelector(".add");
+    const output = document.querySelector(".songs");
+    let nameB = document.querySelector('.nameB').value;
+    let artistB = document.querySelector('.artistB').value;
+    let genreB = document.querySelector('.genreB').value;
+    let linkB = document.querySelector('.linkB').value;
+    output.insertAdjacentHTML("afterbegin", `
+        <div class="card" name = "${nameB}" artist ="${artistB}" genre ="${genreB}">
+            <h2>${nameB}</h2> 
+            <h3>${artistB}</h3>
+            <p>Genres: ${genreB}</p>
+            <a href = "${linkB}">
+                <button class="msc"> Listen on Spotify </button>
+            </a>
+        </div>
+    `)
+}
+
+
+document.querySelector('.add').addEventListener('click', event =>{
+    event.preventDefault();
+
+})
