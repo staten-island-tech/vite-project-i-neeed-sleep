@@ -51,7 +51,7 @@ function fltr(ask){
 
 document.querySelector('#search').addEventListener('submit', ask =>{
     ask.preventDefault();
-    let input = document.querySelector('#input').value.toLowerCase();
+    let input = document.querySelector('#srch').value.toLowerCase();
     fltr(input);
 })
 
@@ -77,11 +77,21 @@ document.querySelector('.mode').addEventListener('click', change =>{
 //////////////////////////////////////////////////////////// ALBUM ART
 
 
+    
 
-/////////////////////////////////////////////////////////// ADD 
+
+document.querySelector('#art').addEventListener('submit', ask =>{
+    ask.preventDefault();
+    const output = document.querySelector(".art");
+    let art = document.querySelector('.arte').value;
+    output.innerHTML("beforeend", `
+        <img src = "${art}">    
+    `)
+})
+
+/////////////////////////////////////////////////////////// ADD SONG
 
 function ADD(){
-    const data = document.querySelector(".add");
     const output = document.querySelector(".songs");
     let nameB = document.querySelector('.nameB').value;
     let artistB = document.querySelector('.artistB').value;
@@ -102,5 +112,5 @@ function ADD(){
 
 document.querySelector('.add').addEventListener('click', event =>{
     event.preventDefault();
-
+    ADD();
 })

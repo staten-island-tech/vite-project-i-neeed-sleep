@@ -43,17 +43,28 @@ h1 {
     font-size: 40px;
 }
 
-.mode, .msc, .add {
+.msc {
     font-family: fantasy;
     background-color: var(--btn);
     color: var(--btn-scd);
     transition: 0.3s;
+    font-size: 20px;
 }
-.mode, .add{
+.add{
+    font-family: fantasy;
+    background-color: var(--btn);
+    color: var(--btn-scd);
+    transition: 0.3s;
     font-size: 25px;
     height: 40px;
 }
 .mode {
+    font-family: fantasy;
+    background-color: var(--btn);
+    color: var(--btn-scd);
+    transition: 0.3s;
+    font-size: 25px;
+    height: 40px;
     width: 40px;
 }
 
@@ -65,8 +76,8 @@ h1 {
 .art {
     align-items: center;
     justify-content: center;
-    height: 80px;
-    width: 80px;    
+    max-height: 150px;
+    max-width: 150px;    
 }
 
 .songs {
@@ -92,6 +103,13 @@ h1 {
 }
 
 #new{
+    font-size: 30px;
+    font-family: sans-serif;
+    width:640px;
+}
+
+.arte {
+    margin-left: 5%;
     font-size: 30px;
     font-family: sans-serif;
     width:640px;
