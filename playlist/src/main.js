@@ -76,15 +76,11 @@ document.querySelector('.mode').addEventListener('click', change =>{
 
 //////////////////////////////////////////////////////////// ALBUM ART
 
-
-    
-
-
 document.querySelector('#art').addEventListener('submit', ask =>{
     ask.preventDefault();
     const output = document.querySelector(".art");
-    let art = document.querySelector('.arte').value;
-    output.innerHTML("beforeend", `
+    let art = document.querySelector('#arte').value;
+    output.insertAdjacentHTML("afterbegin", `
         <img src = "${art}">    
     `)
 })
