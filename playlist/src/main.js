@@ -80,7 +80,7 @@ document.querySelector('#art').addEventListener('submit', ask =>{
     ask.preventDefault();
     const output = document.querySelector(".art");
     let art = document.querySelector('#arte').value;
-    output.innerHTML = `<img src = "${art}" height = "200px">`;
+    output.innerHTML = `<img src = "${art}" class = "img" height = "200px">`;
 })
 
 /////////////////////////////////////////////////////////// ADD SONG

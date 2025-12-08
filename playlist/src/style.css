@@ -40,6 +40,7 @@ p, h1, h2, h3 {
 }
 
 h1 {
+    margin: 5%;
     font-size: 40px;
 }
 
@@ -71,11 +72,6 @@ h1 {
 .mode:hover, .msc:hover {
     background-color: var(--btn-scd);
     color: var(--btn);
-}
-
-.art {
-    align-items: center;
-    justify-content: center;
 }
 
 .songs {
@@ -110,6 +106,7 @@ h1 {
     margin-left: 5%;
     font-size: 30px;
     font-family: sans-serif;
+    width:640px;
 }
 
 #srch {
@@ -125,4 +122,10 @@ h1 {
 .plus {
     padding-left: 5%;
     width: 600px;
+}
+
+
+.art {
+    align-items: center;
+    text-align: center;
 }
