@@ -35,6 +35,10 @@ body {
     background-color: var(--scd);
 }
 
+p {
+    font-weight: bold;
+}
+
 p, h1, h2, h3 {
     color: var(--fnt);
 }
@@ -128,4 +132,17 @@ h1 {
 .art {
     align-items: center;
     text-align: center;
+}
+
+
+.pop {
+    color: #D533A2;
+}
+
+.christmas {
+    color: #790101;
+}
+
+.cartoon {
+    color:#31CAD5;
 }

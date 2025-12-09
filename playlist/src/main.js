@@ -3,17 +3,17 @@ import "./style.css"
 let playlist = [{
         name: "You're Magical", 
         artists:["Elisa Rosselli", "Winx Club"],
-        genres: ["Cartoon", "Pop"],
+        genre: "Cartoon",
         spotify: "https://open.spotify.com/track/7rROo4K5ZOCIkJ2uPtHWI4"
     },{
         name: "Never Gonna Give You Up", 
         artists:["Rick Astley"],
-        genres: ["Pop"],
+        genre: "Pop",
         spotify: "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
     },{
         name: "All I Want For Christmas Is You", 
         artists:["Mariah Carey"],
-        genres: ["Christmas", "Pop"],
+        genre: "Christmas",
         spotify: "https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn"
 }]
 
@@ -24,7 +24,7 @@ function show(song){
         <div class="card" name = "${song.name}" artist ="${song.artists}" genre ="${song.genres}">
             <h2>${song.name}</h2> 
             <h3>${song.artists}</h3>
-            <p>Genres: ${song.genres}</p>
+            <p class="${song.genre.toLowerCase()}">Genre: ${song.genre}</p>
             <a href = "${song.spotify}">
                 <button class="msc"> Listen on Spotify </button>
             </a>
@@ -90,12 +90,13 @@ function ADD(){
     let nameB = document.querySelector('.nameB').value;
     let artistB = document.querySelector('.artistB').value;
     let genreB = document.querySelector('.genreB').value;
+    let genreD =  genreB.charAt(0).toUpperCase() + genreB.slice(1);
     let linkB = document.querySelector('.linkB').value;
     output.insertAdjacentHTML("afterbegin", `
         <div class="card" name = "${nameB}" artist ="${artistB}" genre ="${genreB}">
             <h2>${nameB}</h2> 
             <h3>${artistB}</h3>
-            <p>Genres: ${genreB}</p>
+            <p class="${genreB.toLowerCase()}">Genre: ${genreD}</p>
             <a href = "${linkB}">
                 <button class="msc"> Listen on Spotify </button>
             </a>
@@ -104,7 +105,16 @@ function ADD(){
 }
 
 
-document.querySelector('.add').addEventListener('click', event =>{
+document.querySelector('#addw').addEventListener('click', event =>{
     event.preventDefault();
     ADD();
+})
+
+////////////////////////////////////////////////// Color GENRE
+
+document.querySelector('#color').addEventListener('click', event =>{
+    event.preventDefault();
+    let colorG = document.querySelector('.colorG').value.toLowerCase();
+    let nameG = document.querySelector('.nameG').value;
+    document.querySelector(`.${nameG}`).style.color = `${colorG}`;
 })
